@@ -1,15 +1,3 @@
-"""
-Crear una clase User
-  - atributos: username, password
-  - metodo: login
-Crear las siguientes clases que hereden de User:
-    - Staff (Profesional)
-    - Patient (Paciente)
-
-- Cada método login deberá imprimir un saludo diferente
-"""
-
-
 class User:
     def __init__(self, username: str, password: str) -> None:
         self.username = username
@@ -18,15 +6,21 @@ class User:
     def login(self) -> None:
         print(f"Bienvenido {self.username}")
 
+    def despedirse(self):
+        print("👋")
+
 
 class Staff(User):
     def login(self) -> None:
-        print(f"Bienvenido profesional {self.username}")
+        print("-- PORTAL DEL PROFESIONAL ---")
+        super().login()
 
 
 class Patient(User):
     def login(self) -> None:
-        print(f"Bienvenido paciente {self.username}")
+        print("-- PORTAL DEL PACIENTE ---")
+        super().login()
+        self.despedirse()
 
 
 user = User("usuario", "")
