@@ -33,7 +33,6 @@ class Computadora:
 
 
 def main():
-    procesador = Procesador(4)
     computadora = Computadora("HP", 4)
     computadora.encender()
     computadora.apagar()
