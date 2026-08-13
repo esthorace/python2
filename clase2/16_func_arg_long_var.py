@@ -1,5 +1,5 @@
-def sumar(*args):
-    return sum(args)
+def sumar(*numeros):
+    return sum(numeros)
 
 
 print(sumar(1, 2, 100))
