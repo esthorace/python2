@@ -1,4 +1,6 @@
-from .libros import Libro
+# from libros import Libro  # importación absoluta
+
+from .libros import Libro  # importación relativa
 
 
 class Biblioteca:
