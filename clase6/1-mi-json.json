@@ -1,0 +1,38 @@
+[
+    {
+        "name": "juan",
+        "age": 40,
+        "city": "41111",
+        "active": null
+    },
+    {
+        "name": "luis",
+        "age": 23,
+        "city": "un lugar",
+        "active": true
+    },
+    {
+        "name": "Dani",
+        "age": 50,
+        "city": "Madrid",
+        "active": true
+    },
+    {
+        "name": "Darío",
+        "age": 17,
+        "city": "Barcelona",
+        "active": false
+    },
+    {
+        "active": true,
+        "age": 50,
+        "city": "Mendoza",
+        "name": "Javier"
+    },
+    {
+        "active": null,
+        "age": 20,
+        "city": "Luján",
+        "name": "Luz"
+    }
+]
