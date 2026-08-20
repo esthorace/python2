@@ -35,12 +35,30 @@ def leer_json(ruta: Path) -> list:
         return datos
 
 
+def introducir_datos() -> dict | None:
+    nombre = input("Nombre: ").strip()
+    if not nombre:
+        print("El nombre no puede estar vacío. Operación cancelada.")
+        return None
+
+    edad = int(input("Edad: "))
+    if edad is None or edad < 0:
+        print("La edad no es válida. Operación cancelada.")
+        return None
+
+    activo = input("¿Activo? ").strip() in {"s", "sí", "si"}
+    return {"nombre": nombre, "edad": edad, "activo": activo}
+
+
 def main() -> None:
     logging.basicConfig(level=logging.DEBUG, format="%(levelname)s: %(message)s")
     archivo = Path("4-ejercicio.json")
-    usuarios: list[dict] = leer_json(archivo)
-    print(usuarios)
-    print(type(usuarios))
+    usuarios = leer_json(archivo)
+    nuevo_usuario = introducir_datos()
+    if nuevo_usuario:
+        usuarios.append(nuevo_usuario)
+        print(usuarios)
+        # escribir_datos(archivo, usuarios)
 
 
 if __name__ == "__main__":
