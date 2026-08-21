@@ -24,7 +24,7 @@ def leer_json(ruta: Path) -> list:
         return []
     except json.JSONDecodeError:
         logger.exception("El archivo existe pero está corrupto")
-        return []
+        raise
     except OSError:
         logger.exception("Error de E/S al leer el archivo")
         return []
@@ -33,6 +33,16 @@ def leer_json(ruta: Path) -> list:
             logger.warning("El contenido no es una lista")
             return []
         return datos
+
+
+def escribir_datos(ruta: Path, datos: list) -> None:
+    try:
+        with ruta.open("w", encoding="utf-8") as f:
+            json.dump(datos, f, indent=4, ensure_ascii=False)
+            logger.info("Datos guardados correctamente en %s", ruta)
+    except OSError:
+        logger.error("Error de E/S al escribir el archivo.")
+        raise
 
 
 def introducir_datos() -> dict | None:
@@ -58,7 +68,7 @@ def main() -> None:
     if nuevo_usuario:
         usuarios.append(nuevo_usuario)
         print(usuarios)
-        # escribir_datos(archivo, usuarios)
+        escribir_datos(archivo, usuarios)
 
 
 if __name__ == "__main__":
