@@ -1,22 +1,21 @@
+def es_mayor_de_edad(edad):
+    return edad >= 18
+
 def solicitar_datos():
     edad = int(input("Edad: "))
     antiguedad = None
     ingresos = None
-    if edad >= 18:
+    if es_mayor_de_edad(edad):
         antiguedad = int(input("Antigüedad en el sistema financiero: "))
         ingresos = int(input("Ingreso mensual: "))
     return edad, antiguedad, ingresos
 
 
-def es_mayor_de_edad(edad):
-    return edad >= 18
-
-
-def cumple_perfil_estandar(antiguedad, ingresos):
+def es_perfil_estandar(antiguedad, ingresos):
     return antiguedad >= 3 and ingresos > 2500
 
 
-def cumple_perfil_gold(ingresos):
+def es_perfil_premium(ingresos):
     return ingresos >= 4000
 
 
@@ -25,8 +24,8 @@ def evaluar_credito(edad, antiguedad, ingresos):
         return False
 
     perfiles = [
-        cumple_perfil_estandar(antiguedad, ingresos),
-        cumple_perfil_gold(ingresos),
+        es_perfil_estandar(antiguedad, ingresos),
+        es_perfil_premium(ingresos),
     ]
     return any(perfiles)
 
