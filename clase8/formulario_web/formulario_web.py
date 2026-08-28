@@ -7,15 +7,13 @@ formulario_html = """
     <body>
         <form method="POST">
             Nombre:<br>
-            <input type="text" name="name">
-                <br>
-                Email:<br>
-                <input type="text" name="email">
-                <br>
-                Mensaje:<br>
-                <textarea name="message"></textarea>
-                <br><br>
-                <input type="submit" value="Enviar">
+            <input type="text" name="name"><br>
+            Email:<br>
+            <input type="text" name="email"><br>
+            Mensaje:<br>
+            <textarea name="message"></textarea>
+            <br><br>
+            <input type="submit" value="Enviar">
          </form> 
     </body>
 </html>
